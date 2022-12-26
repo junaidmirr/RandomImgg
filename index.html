@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+          <div class="banner-image" id="image-container"> </div>
+          <h1> Random Img</h1>
+          <p>Generate random image, <br/>
+            on one button click.</p>
+         </div>
+         <div class="button-wrapper"> 
+           <button class="btn fill" id="generate-button">generate</button>
+         </div>
+           </div>
+       </div>
+
+       <script>
+        /* JavaScript */
+const generateButton = document.getElementById("generate-button");
+const imageContainer = document.getElementById("image-container");
+
+generateButton.addEventListener("click", function() {
+  // Generate a random image URL
+  const imageUrl = "https://picsum.photos/200/300?random=" + Math.random();
+
+  // Create an image element and set its src to the random image URL
+  const imageElement = document.createElement("img");
+  imageElement.src = imageUrl;
+
+  // Clear the image container and append the new image element
+  imageContainer.innerHTML = "";
+  imageContainer.appendChild(imageElement);
+});
+    </script>
+</body>
+</html>
